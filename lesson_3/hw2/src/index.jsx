@@ -6,10 +6,10 @@ import Profile from "./Profile";
 const rootElement = document.querySelector("#root");
 
 const userData = {
-    firstName: 'John',
-    lastName: 'Doe',
-    birthDate: '1991-01-17T11:11:11.819Z',
-    birthPlace: 'London',
+    firstName: "John",
+    lastName: "Doe",
+    birthDate: "1991-01-17T11:11:11.819Z",
+    birthPlace: "London",
 };
 
 ReactDOM.render(<Profile user={userData} />, rootElement);

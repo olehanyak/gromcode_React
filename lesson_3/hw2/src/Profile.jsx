@@ -9,15 +9,15 @@ import moment from 'moment';
 const birhDateUser = (date) => moment(date).format('DD MMM YY');
 
 const Profile = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             <div className="profile__name">
                 {`${props.user.firstName} ${props.user.lastName}`}
             </div>
-            <div className="profile__birth">{`Was born ${birhDateUser(props.user.birthDate)} in ${
-                props.user.birthPlace
-            }`}</div>
+            <div className="profile__birth">
+                {`Was born ${birhDateUser(props.user.birthDate)} in ${props.user.birthPlace}`}
+            </div>
         </div>
     );
 };
