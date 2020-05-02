@@ -14,7 +14,7 @@ const age = (date) => parseInt((new Date().getTime() - new Date(date)) / (24 * 3
 
 const Greeting = (props) => {
     console.log(props);
-    return <div className="greeting">{`My name is ${props.firstName}. I'm ${age(props.birthDate)} years old`}</div>;
+    return <div className="greeting">{`My name is ${props.firstName} ${props.lastName}. I'm ${age(props.birthDate)} years old`}</div>;
 };
 
 export default Greeting;
