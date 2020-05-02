@@ -5,7 +5,7 @@ import moment from 'moment';
 // const birhDateUser = (date) => {
 //     return `${date.getDate()} ${date.getMonth()} ${date.getYear()}`;
 // };
-// console.log(date)
+
 const birhDateUser = (date) => moment(date).format("DD MMM YY");
 
 const Profile = (props) => {

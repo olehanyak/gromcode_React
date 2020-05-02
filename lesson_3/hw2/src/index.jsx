@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import App from "./App";
+import Profile from "./Profile";
 
 const rootElement = document.querySelector("#root");
 
-ReactDOM.render(<App />, rootElement);
+const userData = {
+    firstName: 'John',
+    lastName: 'Doe',
+    birthDate: new Date('1991-01-17T11:11:11.819Z'),
+    birthPlace: 'London',
+};
+
+ReactDOM.render(<Profile user={userData} />, rootElement);

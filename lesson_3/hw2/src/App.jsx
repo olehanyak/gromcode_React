@@ -11,13 +11,13 @@ const userData = {
 };
 
 
-const App = () => {
-    return (
-        <div>
-            {/* <ProfileName user={userData} /> */}
-            <Profile user={userData} />
-        </div>
-    );
-}
+// const App = () => {
+//     return (
+//         <div>
+//             {/* <ProfileName user={userData} /> */}
+//             <Profile user={userData} />
+//         </div>
+//     );
+// }
 
 export default App;
