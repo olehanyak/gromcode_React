@@ -13,10 +13,10 @@ const Profile = (props) => {
     return (
         <div>
             <div className="profile__name">
-                {`${props.user.firstName} ${props.user.lastName}`}
+                {`${props.userData.firstName} ${props.userData.lastName}`}
             </div>
             <div className="profile__birth">
-                {`Was born ${birhDateUser(props.user.birthDate)} in ${props.user.birthPlace}`}
+                {`Was born ${birhDateUser(props.userData.birthDate)} in ${props.userData.birthPlace}`}
             </div>
         </div>
     );
