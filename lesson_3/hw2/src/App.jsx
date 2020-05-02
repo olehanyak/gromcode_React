@@ -14,7 +14,7 @@ const userData = {
 const App = () => {
     return (
         <div>
-            <ProfileName user={userData} />
+            {/* <ProfileName user={userData} /> */}
             <Profile user={userData} />
         </div>
     );

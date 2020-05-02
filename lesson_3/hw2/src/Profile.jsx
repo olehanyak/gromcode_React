@@ -12,9 +12,9 @@ const Profile = (props) => {
     console.log(props);
     return (
         <div>
-            {/* <div className="profile__name">
+            <div className="profile__name">
                 {props.user.firstName} {props.user.lastName}
-            </div> */}
+            </div>
             <div className="profile__birth">{`Was born ${birhDateUser(props.user.birthDate)} in ${
                 props.user.birthPlace
             }`}</div>
