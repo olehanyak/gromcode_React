@@ -1,19 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.scss";
-import ProfileName from "./ProfileName";
-// import moment from 'moment';
+import moment from 'moment';
 
-const birhDateUser = (date) => {
-    return `${date.getDate()} ${date.getMonth()} ${date.getYear()}`;
-};
+// const birhDateUser = (date) => {
+//     return `${date.getDate()} ${date.getMonth()} ${date.getYear()}`;
+// };
 // console.log(date)
+const birhDateUser = (date) => moment(date).format("DD MMM YY");
 
 const Profile = (props) => {
     console.log(props);
     return (
         <div>
-            {/* <ProfileName /> */}
             {/* <div className="profile__name">
                 {props.user.firstName} {props.user.lastName}
             </div> */}
