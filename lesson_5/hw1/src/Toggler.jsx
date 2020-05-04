@@ -17,7 +17,7 @@ class Toggler extends Component {
     render() {
         return (
             <button onClick={this.changeTextButton} className="toggler">
-                 {this.state.isToggleOn ? 'ON' : 'OFF'}
+                 {this.state.isToggleOn ? 'On' : 'Off'}
             </button>
         );
     }
