@@ -5,19 +5,19 @@ class Toggler extends Component {
         console.log(props)
         // console.log(Component)
         super(props);
-        this.state = {isToggleOn: true};
+        this.state = {turnOn: 'Off'};
     }
 
     changeTextButton = () => {
         this.setState(state => ({
-            isToggleOn: !state.isToggleOn
+            turnOn: !state.turnOn
           }));
         }
 
     render() {
         return (
             <button onClick={this.changeTextButton} className="toggler">
-                 {this.state.isToggleOn ? 'On' : 'Off'}
+                 {this.state.turnOn ? 'Off' : 'On'}
             </button>
         );
     }
