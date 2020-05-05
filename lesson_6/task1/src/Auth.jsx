@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Greeting from "./Greeting";
+import Login from "./Login";
+import Logout from "./Logout";
+import GuestGreeting from "./GuestGreeting";
+import UserGreeting from "./UserGreeting";
 
 class Auth extends Component {
     constructor(props) {
@@ -11,13 +15,13 @@ class Auth extends Component {
 
     hendleLogin = () => {
         this.setState({
-            isLoggedIn: false,
+            isLoggedIn: true,
         });
     };
 
     hendleLogout = () => {
         this.setState({
-            isLoggedIn: true,
+            isLoggedIn: false,
         });
     };
 
@@ -26,11 +30,7 @@ class Auth extends Component {
             <div className="panel">
                 <Greeting isLoggedIn={this.state.isLoggedIn} />
 
-                {this.state.isLoggedIn ? (
-                    <button className="login btn" onClick={this.hendleLogin}>logout</button>
-                ) : (
-                    <button className="logout btn" onClick={this.hendleLogout}>login</button>
-                )}
+                {this.state.isLoggedIn ? <Login login={this.hendleLogin} /> : <Logout Logout={this.hendleLogout} />}
             </div>
         );
     }
