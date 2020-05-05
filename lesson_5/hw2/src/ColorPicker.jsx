@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-// const CORAL = "Coral";
-// const AQUA = "Aqua";
-// const BISQUE = "Bisque";
+const CORAL = "Coral";
+const AQUA = "Aqua";
+const BISQUE = "Bisque";
 
 class ColorPicker extends Component {
     constructor(props) {
@@ -31,17 +31,17 @@ class ColorPicker extends Component {
                 <div>
                     <button
                         className="picker__button picker__button_coral"
-                        onMouseEnter={() => this.showColorName('Coral')}
+                        onMouseOver={() => this.showColorName(CORAL)}
                         onMouseOut={this.hideColorName}
                     ></button>
                     <button
                         className="picker__button picker__button_aqua"
-                        onMouseEnter={() => this.showColorName('Aqua')}
+                        onMouseOver={() => this.showColorName(AQUA)}
                         onMouseOut={this.hideColorName}
                     ></button>
                     <button
                         className="picker__button picker__button_bisque"
-                        onMouseEnter={() => this.showColorName('Bisque')}
+                        onMouseOver={() => this.showColorName(BISQUE)}
                         onMouseOut={this.hideColorName}
                     ></button>
                 </div>
