@@ -27,7 +27,7 @@ class ColorPicker extends Component {
     render() {
         return (
             <div>
-                <div className="picker__title"> {`${this.state.showIn}`}</div>
+                <div className="picker__title">{`${this.state.showIn}`}</div>
                 <div>
                     <button
                         className="picker__button picker__button_coral"
