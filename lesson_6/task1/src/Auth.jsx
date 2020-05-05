@@ -11,13 +11,13 @@ class Auth extends Component {
 
     hendleLogin = () => {
         this.setState({
-            isLoggedIn: true,
+            isLoggedIn: false,
         });
     };
 
     hendleLogout = () => {
         this.setState({
-            isLoggedIn: false,
+            isLoggedIn: true,
         });
     };
 
@@ -27,9 +27,9 @@ class Auth extends Component {
                 <Greeting isLoggedIn={this.state.isLoggedIn} />
 
                 {this.state.isLoggedIn ? (
-                    <button onClick={this.hendleLogout}>Login</button>
+                    <button className="login btn" onClick={this.hendleLogin}>logout</button>
                 ) : (
-                    <button onClick={this.hendleLogin}>Logout</button>
+                    <button className="logout btn" onClick={this.hendleLogout}>login</button>
                 )}
             </div>
         );
