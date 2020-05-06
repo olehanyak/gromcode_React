@@ -3,6 +3,7 @@ import UserGreeting from "./UserGreeting";
 import GuestGreeting from "./GuestGreeting";
 
 const Greeting = ({ isLoggedIn }) => {
+    console.log(isLoggedIn)
     if (isLoggedIn) {
         return <UserGreeting />;
     }
