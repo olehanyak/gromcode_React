@@ -33,13 +33,14 @@ class Auth extends Component {
 
     render() {
         const { isLoggedIn, isLoading } = this.state;
+        
         if (isLoading) {
             return <Spinner size={20} />;
         }
         if (isLoggedIn) {
-            return <Logout logout={this.onLogout} />;
+            return <Logout onLogout={this.onLogout} />;
         }
-        return <Login login={this.onLogin} />;
+        return <Login onLogin={this.onLogin} />;
     }
 }
 
