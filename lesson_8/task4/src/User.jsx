@@ -5,10 +5,6 @@ class User extends Component {
         user: null,
     };
 
-    componentDidMount() {
-        this.fetchUser(this.props.userId);
-    }
-
     fetchUser = (userId) => {
         fetch(`https://api.gitHub.com/users/${userId}`)
             .then((response) => response.json())
@@ -18,6 +14,10 @@ class User extends Component {
                 });
             });
     };
+
+    componentDidMount() {
+        this.fetchUser(this.props.userId);
+    }
 
     render() {
         const { user } = this.state;
