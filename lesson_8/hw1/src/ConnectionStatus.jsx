@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ConnectionStatus extends Component {
     state = {
-        status: online,
+        status: "online",
     };
 
     newStatus = (e) => {
