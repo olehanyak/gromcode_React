@@ -7,7 +7,7 @@ class UserForm extends Component {
             (acc, [name, value]) => ({ ...acc, [name]: value }),
             {}
         );
-        this.props.onSubmit(this.state);
+        this.props.onSubmit(formData);
         console.log(formData);
     };
 
