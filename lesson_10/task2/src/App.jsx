@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ShoppingCart from "./ShoppingCart.jsx";
 import Profile from "./Profile.jsx";
 
-class Page extends Component {
+class App extends Component {
     state = {
         firstName: "Robin",
         lastName: "Hood",
@@ -31,4 +31,4 @@ class Page extends Component {
     }
 }
 
-export default Page;
+export default App;
