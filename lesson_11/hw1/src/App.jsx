@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Expand from "./Expand.jsx";
 
 const App = () => {
