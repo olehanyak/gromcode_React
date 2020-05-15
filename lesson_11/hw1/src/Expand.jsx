@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp, faChevronDown } from "@fortawesome/fontawesome-free-solid";
 
 class Expand extends Component {
     state = {
@@ -16,8 +14,8 @@ class Expand extends Component {
     render() {
         const { title, children } = this.props;
         const { content } = this.state;
-        const arrowUp = <FontAwesomeIcon icon={faChevronUp} />;
-        const arrowDown = <FontAwesomeIcon icon={faChevronDown} />;
+        const arrowUp = <i className="fas fa-chevron-up" />;
+        const arrowDown = <i className="fas fa-chevron-down" />;
         return (
             <div className="expand border">
                 <div className="expand__header">
