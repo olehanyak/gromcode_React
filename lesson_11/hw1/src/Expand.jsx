@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/fontawesome-free-solid";
-// import PropTypes from "prop-types";
 
 class Expand extends Component {
     state = {
