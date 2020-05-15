@@ -15,25 +15,19 @@ class Expand extends Component {
     };
 
     render() {
+        const { title, children } = this.props;
+        const { content } = this.state;
         const arrowUp = <FontAwesomeIcon icon={faChevronUp} />;
         const arrowDown = <FontAwesomeIcon icon={faChevronDown} />;
-
-        const button = this.state.content ? (
-            <i className="fas fa-chevron-up">{arrowUp}</i>
-        ) : (
-            <i className="fas fa-chevron-down">{arrowDown}</i>
-        );
-        const place = this.state.content && <div className="expand__content">{this.props.children}</div>;
-
         return (
             <div className="expand border">
                 <div className="expand__header">
-                    <span className="expand__title">{this.props.title}</span>
+                    <span className="expand__title">{title}</span>
                     <button className="expand__toggle-btn" onClick={this.onShow}>
-                        {button}
+                        {content ? arrowUp : arrowDown}
                     </button>
                 </div>
-                {place}
+                {content && <div className="expand__content">{children}</div>}
             </div>
         );
     }
