@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/fontawesome-free-solid";
+import PropTypes from "prop-types";
 
 class Expand extends Component {
     state = {
@@ -43,5 +44,14 @@ class Expand extends Component {
         );
     }
 }
+
+Expand.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.element.isRequired,
+};
+
+Expand.defaultProps = {
+    title: "Some title",
+};
 
 export default Expand;
