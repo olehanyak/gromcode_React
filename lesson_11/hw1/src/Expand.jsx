@@ -47,12 +47,9 @@ import { faChevronUp, faChevronDown } from "@fortawesome/fontawesome-free-solid"
 // export default Expand;
 
 class Expand extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content: false,
-        };
-    }
+    state = {
+        content: false,
+    };
 
     showText = () =>
         this.setState({
@@ -60,11 +57,7 @@ class Expand extends Component {
         });
 
     render() {
-        const button = this.state.content ? (
-            <i className="fas fa-arrow-up"></i>
-        ) : (
-            <i className="fas fa-arrow-down"></i>
-        );
+        const button = this.state.content ? <i className="fas fa-arrow-up"></i> : <i className="fas fa-arrow-down"></i>;
         const content = this.state.content && <div className="expand__content">{this.props.children}</div>;
 
         return (
@@ -74,7 +67,7 @@ class Expand extends Component {
                     <button className="expand__toggle-btn" onClick={this.showText}>
                         {button}
                         <FontAwesomeIcon icon={faChevronDown} onClick={this.onShow} />
-                       <FontAwesomeIcon icon={faChevronUp} onClick={this.onShow}  />
+                        <FontAwesomeIcon icon={faChevronUp} onClick={this.onShow} />
                     </button>
                 </div>
                 {content}
