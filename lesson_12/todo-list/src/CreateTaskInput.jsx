@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
 
 class CreateTaskInput extends Component {
     state = {
@@ -14,7 +13,7 @@ class CreateTaskInput extends Component {
 
     handleTaskCreate = () => {
         this.props.onCreate(this.state.value);
-        this.setState({ value: ''});
+        this.setState({ value: "" });
     };
 
     render() {
