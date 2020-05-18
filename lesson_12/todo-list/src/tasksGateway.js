@@ -4,7 +4,7 @@ export const createTask = taskData => {
     return fetch(baseUrl, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json;utc-8",
+            "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify(taskData),
     }).then((response) => {
@@ -23,26 +23,25 @@ export const fetchTaskList = () => {
             }
         })
         .then((tasksList) =>
-            tasksList.map(({ _id, ...task }) => ({ id: _id, ...task, })),
-        );
+            tasksList);
 };
 
 export const updateTask = (taskId, taskData) => {
     return fetch(`${baseUrl}/${taskId}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json;utc-8",
+            "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify(taskData),
     }).then((response) => {
         if (!response.ok) {
-            throw new Error("Failed to create task");
+            throw new Error("Failed to update task");
         }
     });
 };
 
-export const deleteTask = taskId => {
-    return fetch(`${baseUrl}/${taskId}`, {
+export const deleteTask = id => {
+    return fetch(`${baseUrl}/${id}`, {
         method: "DELETE",
     }).then((response) => {
         if (!response.ok) {

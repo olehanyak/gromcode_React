@@ -19,7 +19,7 @@ class TasksList extends Component {
         this.fetchTasks();
     }
 
-    fetchTasks = () => {
+    fetchTask = () => {
         fetchTaskList().then((taskList) => {
             this.setState({
                 tasks: taskList,
@@ -34,7 +34,7 @@ class TasksList extends Component {
         };
 
         createTask(newTask).then(() => {
-            this.fetchTasks();
+            this.fetchTask();
         });
     };
 
@@ -46,13 +46,13 @@ class TasksList extends Component {
         };
 
         updateTask(id, updatedTask).then(() => {
-            this.fetchTasks();
+            this.fetchTask();
         });
     };
 
     handleTaskDelete = (id) => {
         deleteTask(id).then(() => {
-            this.fetchTasks();
+            this.fetchTask();
         });
     };
 
@@ -63,14 +63,16 @@ class TasksList extends Component {
             <div className="todo-list">
                 <CreateTaskInput onCreate={this.onCreate} />
                 <ul className="list">
-                    {sortedList.map((task) => (
-                        <Task
-                            key={task.id}
-                            {...task}
-                            onChange={this.handleTaskStatusChange}
-                            onDelete={this.handleTaskDelete}
-                        />
-                    ))}
+                    {sortedList.map((task) => {
+                        return (
+                            <Task
+                                key={task.id}
+                                {...task}
+                                onChange={this.handleTaskStatusChange}
+                                onDelete={this.handleTaskDelete}
+                            />
+                        );
+                    })}
                 </ul>
             </div>
         );
