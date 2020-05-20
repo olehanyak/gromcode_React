@@ -1,25 +1,20 @@
-import React,{ Component } from "react";
+import React, { Component } from "react";
 import Task from "./Task";
 import CreateTaskInput from "./CreateTaskInput";
-import { createTask, fetchTaskList, updateTask, deleteTask } from "./tasksGateway";
+import PropTypes from "prop-types";
+import { createTask, fetchTasksList, updateTask, deleteTask } from "./tasksGateway";
 
 class TasksList extends Component {
     state = {
-        tasks: [
-            // { text: "Buy milk", done: false, id: 1 },
-            // { text: "Pick up Tom from airport", done: false, id: 2 },
-            // { text: "Visit party", done: false, id: 3 },
-            // { text: "Visit doctor", done: true, id: 4 },
-            // { text: "Buy meat", done: true, id: 5 },
-        ],
+        tasks: [],
     };
 
     componentDidMount() {
-        this.fetchTasks();
+        this.fetchTask();
     }
 
     fetchTask = () => {
-        fetchTaskList().then((taskList) => {
+        fetchTasksList().then((taskList) => {
             this.setState({
                 tasks: taskList,
             });
@@ -77,5 +72,14 @@ class TasksList extends Component {
         );
     }
 }
+
+TasksList.propTypes = {
+    createTask: PropTypes.func,
+    fetchTasksList: PropTypes.func,
+    updateTask: PropTypes.func,
+    deleteTask: PropTypes.func,
+};
+
+TasksList.defaultTypes = {};
 
 export default TasksList;
