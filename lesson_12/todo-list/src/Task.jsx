@@ -2,9 +2,9 @@ import React from "react";
 import classNames from "classnames";
 
 const Task = ({ id, done, text, onChange, onDelete }) => {
-    const listItemClasses = classNames("list-item", { "list-item_done": done });
+    const listItemClass = classNames("list-item", { "list-item_done": done, });
     return (
-        <li className={listItemClasses}>
+        <li className={listItemClass}>
             <input
                 type="checkbox"
                 className="list-item__checkbox"
