@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Task from "./Task";
 import CreateTaskInput from "./CreateTaskInput";
+import PropTypes from "prop-types";
 import { createTask, fetchTasksList, updateTask, deleteTask } from "./tasksGateway";
 
 class TasksList extends Component {
@@ -14,7 +15,7 @@ class TasksList extends Component {
 
     fetchTask = () => {
         fetchTasksList().then((taskList) => {
-            this.setState({
+            return this.setState({
                 tasks: taskList,
             });
         });
@@ -25,10 +26,7 @@ class TasksList extends Component {
             text,
             done: false,
         };
-
-        createTask(newTask).then(() => {
-            this.fetchTask();
-        });
+        createTask(newTask).then(() => this.fetchTask());
     };
 
     handleTaskStatusChange = (id) => {
@@ -37,26 +35,20 @@ class TasksList extends Component {
             text,
             done: !done,
         };
-
-        updateTask(id, updatedTask).then(() => {
-            this.fetchTask();
-        });
+        updateTask(id, updatedTask).then(() => this.fetchTask());
     };
 
     handleTaskDelete = (id) => {
-        deleteTask(id).then(() => {
-            this.fetchTask();
-        });
+        deleteTask(id).then(() => this.fetchTask());
     };
 
     render() {
-        const sortedList = this.state.tasks.slice().sort((a, b) => a.done - b.done);
-
+        const sortedTask = this.state.tasks.slice().sort((a, b) => a.done - b.done);
         return (
             <div className="todo-list">
                 <CreateTaskInput onCreate={this.onCreate} />
                 <ul className="list">
-                    {sortedList.map((task) => {
+                    {sortedTask.map((task) => {
                         return (
                             <Task
                                 key={task.id}
@@ -71,5 +63,14 @@ class TasksList extends Component {
         );
     }
 }
+
+TasksList.propTypes = {
+    createTask: PropTypes.func,
+    fetchTasksList: PropTypes.func,
+    updateTask: PropTypes.func,
+    deleteTask: PropTypes.func,
+};
+
+TasksList.defaultTypes = {};
 
 export default TasksList;
