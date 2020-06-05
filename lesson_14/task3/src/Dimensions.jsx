@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Dimensions = ({ match }) => {
+const Dimensions = () => {
     const [dimensions, setDimensions] = useState({
         width: null,
         height: null,
@@ -10,17 +10,18 @@ const Dimensions = ({ match }) => {
         const { innerHeight, innerWidth } = window;
         setDimensions({ width: innerWidth, height: innerHeight });
         const handleResize = (e) => {
-            const { innerWidth, innerHeight } = e.target;
+            const { innerHeight, innerWidth } = e.target;
             setDimensions({ width: innerWidth, height: innerHeight });
         };
         window.addEventListener("resize", handleResize);
+
         return () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     const { width, height } = dimensions;
-    return <div class="dimensions">{`${width}px - ${height}px`}</div>;
+    return <div className="dimensions">{`${width}px - ${height}px`}</div>;
 };
 
 export default Dimensions;
