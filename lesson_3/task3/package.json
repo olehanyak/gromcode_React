@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "moment": "^2.25.0",
+    "moment": "^2.29.4",
     "moment-js": "^1.1.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
